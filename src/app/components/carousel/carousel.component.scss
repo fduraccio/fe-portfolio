@@ -1,0 +1,51 @@
+.carousel-container {
+  overflow: hidden; /* Nasconde l'eccesso */
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  gap: 20px; /* Spaziatura tra le card */
+  overflow-x: auto; /* Scroll orizzontale */
+  scroll-behavior: smooth; /* Scroll fluido */
+
+
+  /* Rimuove la barra di scorrimento su browser */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+}
+
+.carousel-card {
+  flex: 0 0 auto; /* Imposta larghezza fissa */
+  width: 409px;
+  height: 277px;
+  border-radius: 60px; /* Angoli arrotondati */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+
+  mat-card-title {
+    font-size: 25px;
+    font-weight: bold;;
+    margin-bottom: 0.5rem;
+  }
+
+  mat-card-content {
+    font-size: 1rem;
+    text-align: center;
+    color: #bbb;
+  }
+}

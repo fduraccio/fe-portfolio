@@ -1,0 +1,71 @@
+@use '@angular/material' as mat;
+
+// Palette Material per lo sfondo
+$background-palette: mat.define-palette((
+  50: #111111,  // Testo (bianco)
+  100: #0C0C0D, // Background principale
+  200: #131313, // Background più chiaro
+  300: #272727, // Grigio più chiaro
+  400: #6F6F6F, // Grigio chiaro
+  500: #C8C8C8, // Grigio molto chiaro
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #000000,
+    500: #000000,
+  )
+));
+
+// Palette Material per lo sfondo
+$color-palette: mat.define-palette((
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #000000,
+    500: #000000,
+    contrast: (
+      50: #ffffff,
+      100: #ffffff,
+      200: #ffffff,
+      300: #ffffff,
+      400: #000000,
+      500: #000000,
+    )
+));
+
+// Palette Material per il verde
+$green-palette: mat.define-palette((
+  500: #5FB9B0,
+  400: #77c7bf,
+  300: #91d5cf,
+  contrast: (
+    500: #ffffff,
+  )
+));
+
+// Palette Material per il viola
+$purple-palette: mat.define-palette((
+  500: #B292FF,
+  400: #C4ACFF,
+  300: #D7C5FF,
+  200: #C69AFF,
+  contrast: (
+    500: #ffffff,
+  )
+));
+
+// Tema Material completo
+$custom-material-theme: mat.define-light-theme((
+  color: (
+    primary: $background-palette,
+    accent: $color-palette,
+    warn: $purple-palette,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+// Applica il tema a tutti i componenti Material
+@include mat.all-component-themes($custom-material-theme);

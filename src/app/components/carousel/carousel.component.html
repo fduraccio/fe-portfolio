@@ -1,0 +1,13 @@
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <mat-card *ngFor="let card of cards" [ngStyle]="{ 'background-color': card.color }" class="carousel-card">
+      <img *ngIf="!!card.icon" [src]="card.icon" [alt]="card.label" class="icon" />
+      <mat-card-title>{{ card.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ card.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+

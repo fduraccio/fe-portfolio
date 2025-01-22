@@ -1,0 +1,59 @@
+<section class="home-container">
+  <section class="hero row">
+    <div class="content col-sm-6">
+      <div class="profile-photo d-sm-none">
+        <img src="/assets/img/photo.jpg" alt="Federica" />
+      </div>
+
+      <h1>Hi, I'm Federica</h1>
+      <p>
+        During these <b> 4 years</b> as <b>Front-End Software Engineer</b>. My
+        role has extended beyond coding to effective communication with various
+        departments, to define new features and spearheading the development of
+        new apps.
+      </p>
+
+      <div class="cta-container">
+        <button mat-raised-button color="primary" class="cta-button">
+          Download CV
+        </button>
+
+        <a mat-link class="cta-button secondary" routerLink="/experience">
+          See experiences
+        </a>
+      </div>
+    </div>
+
+    <div class="profile-photo col-sm-4 d-none d-sm-block">
+      <img src="/assets/img/photo.jpg" alt="Federica" />
+    </div>
+  </section>
+
+  <section>
+    <carousel></carousel>
+  </section>
+
+  <section class="languages-section">
+    <div *ngFor="let language of languages" class="row languages">
+      <span [ngStyle]="{ color: language.color }">
+        {{ language.label }}
+      </span>
+    </div>
+  </section>
+
+  <section class="technologies-section">
+    <span> These are the technologies I’ve been using </span>
+    <section class="skill-cards-section">
+      <skill-card
+        [title]="'Front-end Engineer Design'"
+        [items]="skills"
+      ></skill-card>
+
+      <!-- <skill-card
+        [title]="'Front-end Engineer Design'"
+        [items]="skills"
+      ></skill-card> -->
+<!--  -->
+    </section>
+  </section>
+</section>

@@ -1,0 +1,124 @@
+@import '~@angular/material/theming';
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+
+// @import './styles/colors'; // Contiene le definizioni di palette
+// @import './theme';  // Contiene la definizione del tema
+@import './styles/colors';
+@import './styles/theme';
+
+// Variabili CSS globali
+:root {
+  --background: #0C0C0D;
+  --background-lighter: #131313;
+  --gray-more-lighter: #272727;
+  --light-gray: #6F6F6F;
+  --very-light-gray: #C8C8C8;
+  --green: #5FB9B0;
+  --purple: #B292FF;
+  --purple-light: #C4ACFF;
+  --purple-very-light: #D7C5FF;
+  --text-white: #111111;
+}
+
+// Definisci i colori personalizzati
+// // Palette principale
+// $primary-color: #131313;;
+// $secondary-color: #B292FF;
+// $accent-color: #5FB9B0;
+
+// $color-background:  #0C0C0D;
+// $color-text-light:  #C8C8C8;
+// $color-text-dark: #272727;
+// $color-button-normal: #6F6F6F;
+// $color-button-hover: #5FB9B0;
+
+
+
+// Gradazioni
+// $primary-light: lighten($primary-color, 20%);
+// $primary-dark: darken($primary-color, 20%);
+
+// // Crea palette di colori per i tuoi colori personalizzati
+// $primary-palette: mat-palette($mat-grey, 900, 700, 500);  // Adatta con sfumature
+// $accent-palette: mat-palette($mat-teal, 500, 300, 700);  // Teal per l'accento
+// $warn-palette: mat-palette($mat-indigo, 500, 300, 700);  // Indigo per il colore di avvertimento
+
+// // Crea il tema personalizzato
+// $custom-theme: mat-light-theme(
+//   (
+//     color: (
+//       primary: $primary-palette,
+//       accent: $accent-palette,
+//       warn: $warn-palette,
+//     ),
+//     background: (
+//       default: $color-background,
+//       paper: $color-background,
+//     ),
+//     typography: mat-typography-config(),
+//   )
+// );
+
+$font-family: 'Raleway, sans-serif';
+
+// Configura il tema con il font personalizzato
+$custom-theme: mat-light-theme(
+  (
+    typography: mat-typography-config(
+      $font-family: $font-family
+    )
+  )
+);
+
+// Applica il tema
+@include angular-material-theme($custom-theme);
+
+body, h1, p {
+  background-color: $background;  // Imposta il colore di sfondo globale (nero)
+  color: mat-color($color-palette, 100);
+  font-family: 'Raleway', sans-serif !important;
+}
+
+
+
+
+/* styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px; /* 200px a sinistra, una colonna flessibile, 200px a destra */
+  gap: 20px;
+  min-height: 100vh;
+}
+
+header, footer {
+  grid-column: 1 / -1; /* Header e footer occupano tutta la larghezza della griglia */
+}
+
+nav {
+  grid-column: 1; /* Il menu di navigazione occupa la colonna sinistra */
+}
+
+main {
+  grid-column: 2; /* Il contenuto principale occupa la colonna centrale */
+}
+
+/* Modifica per schermi piccoli (mobile) */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: 34px 1fr 34px; /* 34px a sinistra e destra per mobile */
+  }
+
+  nav {
+    grid-column: 1 / -1; /* Il menu di navigazione diventa a tutta larghezza su mobile */
+  }
+
+  main {
+    grid-column: 1 / -1; /* Il contenuto principale occupa tutta la larghezza */
+  }
+}
