@@ -7,20 +7,21 @@
 
       <h1>Hi, I'm Federica</h1>
       <p>
-        During these <b> 4 years</b> as <b>Front-End Software Engineer</b>. My
-        role has extended beyond coding to effective communication with various
-        departments, to define new features and spearheading the development of
-        new apps.
+        During these <b>4 years</b> of experience in fintech as
+        <b>Front-End Software Engineer</b> I specialize in creating user-focused
+        applications and thrive in cross-team collaboration to define and
+        develop impactful features. I'm passionate about growth, innovation, and
+        delivering high-quality solutions.
       </p>
 
       <div class="cta-container">
-        <button mat-raised-button color="primary" class="cta-button">
+        <button mat-raised-button color="primary" class="cta-button" (click)="downloadPDF()">
           Download CV
         </button>
 
-        <a mat-link class="cta-button secondary" routerLink="/experience">
+        <!-- <a mat-link class="cta-button secondary" routerLink="/experience">
           See experiences
-        </a>
+        </a> -->
       </div>
     </div>
 
@@ -42,18 +43,18 @@
   </section>
 
   <section class="technologies-section">
-    <span> These are the technologies I’ve been using </span>
+    <span> These are the <br> technologies I’ve been using </span>
     <section class="skill-cards-section">
-      <skill-card
-        [title]="'Front-end Engineer Design'"
-        [items]="skills"
+      <skill-card *ngFor="let skillSet of skillSets"
+        [title]="skillSet.title"
+        [items]="skillSet.skills"
       ></skill-card>
 
       <!-- <skill-card
         [title]="'Front-end Engineer Design'"
         [items]="skills"
       ></skill-card> -->
-<!--  -->
+      <!--  -->
     </section>
   </section>
 </section>
