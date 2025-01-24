@@ -37,7 +37,7 @@ main {
   }
 
   main {
-    grid-template-columns: 34px 1fr 34px; /* Il contenuto principale occupa tutta la larghezza */
+    grid-column: 1 / -1; /* Il contenuto principale occupa tutta la larghezza */
   }
 }
 
