@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
   skillSets = [
     {
-      title: "Frontend",
+      title: "Front-end Engineer Design",
       skills: [
         {
           label: "Angular",
