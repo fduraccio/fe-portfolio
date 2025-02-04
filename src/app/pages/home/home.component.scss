@@ -99,6 +99,7 @@
       justify-content: space-evenly;
       padding: 150px 0px;
       overflow: scroll;
+      gap: 25px;
     }
   }
 
@@ -158,8 +159,7 @@
       text-align: center;
 
       .skill-cards-section {
-        padding: 60px 0px;
-        gap: 25px;
+        padding: 60px 20px;
       }
     }
   }
