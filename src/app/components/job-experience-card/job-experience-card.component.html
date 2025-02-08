@@ -1,0 +1,18 @@
+<div class="experience-card">
+  <div class="left-section">
+    <h2 class="title">{{ jobTitle }}</h2>
+    <a href="#" class="contract">{{ contractType }}</a>
+    <p class="date-location">
+      {{ startDate }}
+      <span class="bullet">&bull;</span>
+        {{ endDate }}<br />{{ location }}
+    </p>
+  </div>
+  <div class="right-section">
+    <h3 class="company-name">{{ companyName }}</h3>
+    <p *ngFor="let description of descriptions" class="description">
+      {{ description }}
+    </p>
+    <!-- <p class="description">{{ description2 }}</p> -->
+  </div>
+</div>

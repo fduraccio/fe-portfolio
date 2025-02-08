@@ -14,7 +14,7 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: normal;
-    color: mat-color($color-palette, 100);
+    color: mat-color($purple-palette, 500);
 
     &:hover {
       color: mat-color($purple-palette, 300);
@@ -25,12 +25,8 @@
 
   }
 
-  .nav-purple{
-    color: mat-color($purple-palette, 500);
-  }
-
-  .nav-light-purple{
-    color: mat-color($purple-palette, 400);
+  a.active {
+    color: white;
   }
 
   .left-section {
