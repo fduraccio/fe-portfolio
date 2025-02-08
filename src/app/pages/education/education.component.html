@@ -1,1 +1,12 @@
-<p>education works!</p>
+<section class="education-container">
+  <div *ngFor="let education of educations">
+    <education-card
+      [title]="education.title"
+      [description]="education.description"
+      [startDate]="education.startDate"
+      [endDate]="education.endDate"
+      [location]="education.location"
+    >
+    </education-card>
+  </div>
+</section>
