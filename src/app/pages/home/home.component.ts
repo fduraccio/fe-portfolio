@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
 
   downloadPDF() {
     const link = document.createElement("a");
-    link.href = "assets/Academic_CV_FedericaDuraccio.pdf"; // Percorso relativo al file PDF
+    link.href = "assets/Academic_CV_FedericaDuraccio_S.pdf"; // Percorso relativo al file PDF
     link.download = "Academic_CV_FedericaDuraccio.pdf"; // Nome che avrà il file scaricato
     link.click(); // Simula il click per avviare il download
   }
