@@ -1,1 +1,32 @@
-<p>experience works!</p>
+<section class="experience-container">
+  <h1>
+    < Here, you can know me a little more and see my whole experience as a
+    <b> Front-End Software Engineer </b> />
+
+    <div class="cta-container">
+      <button
+        mat-raised-button
+        color="primary"
+        class="cta-button"
+        (click)="downloadPDF()"
+      >
+        Download CV
+      </button>
+    </div>
+  </h1>
+
+  <section>
+    <div *ngFor="let experience of experiences">
+      <job-experience-card
+        [jobTitle]="experience.jobTitle"
+        [contractType]="experience.contractType"
+        [startDate]="experience.startDate"
+        [endDate]="experience.endDate"
+        [location]="experience.location"
+        [companyName]="experience.companyName"
+        [descriptions]="experience.descriptions"
+      >
+      </job-experience-card>
+    </div>
+  </section>
+</section>
