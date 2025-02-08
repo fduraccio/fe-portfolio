@@ -1,0 +1,88 @@
+@import '../../../styles.scss';
+
+.experience-card {
+  display: flex;
+  flex-direction: row;
+  /* Default: layout orizzontale */
+  justify-content: space-between;
+  background: #121212;
+  color: #fff;
+  padding: 70px 80px;
+  border-radius: 12px;
+  width: 100%;
+  // margin: 20px auto;
+  /* Centra la card */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* Aggiunge un'ombra */
+}
+
+.left-section {
+  flex: 1;
+  /* Bilancia lo spazio */
+  padding: 10px;
+}
+
+.right-section {
+  flex: 2;
+  /* Bilancia lo spazio */
+  padding: 10px;
+}
+
+.bullet{
+  color: var(--green);
+}
+
+.date-location{
+  font-size: 16px;
+  color: var(--light-gray);
+  font-weight: 300;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.contract {
+  color: var(--purple);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.company-name {
+  color: var(--purple);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.description {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--light-gray)
+}
+
+/* MEDIA QUERY PER MOBILE */
+@media (max-width: 768px) {
+  .experience-card {
+    flex-direction: column;
+    /* Cambia layout a colonna su schermi piccoli */
+    text-align: center;
+    /* Centra il contenuto */
+    padding: 30px;
+    text-align: left;
+
+    .title {
+      font-size: 16px;
+
+    }
+  }
+
+  .company-name {
+    font-size: 22px
+  }
+
+  .description {
+    font-size: 14px;
+
+  }
+}

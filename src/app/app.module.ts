@@ -14,6 +14,7 @@ import { CarouselComponent } from "./components/carousel/carousel.component";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatCardModule } from "@angular/material/card";
 import { SkillCardComponent } from "./components/skill-card/skill-card.component";
+import { JobExperienceCardComponent } from './components/job-experience-card/job-experience-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SkillCardComponent } from "./components/skill-card/skill-card.component
     NavbarComponent,
     CarouselComponent,
     SkillCardComponent,
+    JobExperienceCardComponent,
   ],
   imports: [
     BrowserModule,

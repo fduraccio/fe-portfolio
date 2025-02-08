@@ -1,0 +1,59 @@
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 144px;
+
+  h1 {
+    text-align: center;
+    max-width: 45%;
+    margin: 0 auto;
+    font-weight: lighter;
+    font-size: 24px;
+    line-height: 1.5;
+    word-wrap: break-word;
+
+
+    .cta-container {
+      display: flex;
+      gap: 1rem;
+      /* Spaziatura tra i pulsanti */
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    /* MEDIA QUERY PER MOBILE */
+    @media (max-width: 768px) {
+      max-width: 75%;
+
+    }
+  }
+
+  section {
+    display: grid;
+    gap: 90px;
+
+    /* MEDIA QUERY PER MOBILE */
+    @media (max-width: 768px) {
+      gap: 30px;
+      margin: 0px 34px;
+    }
+  }
+
+
+
+  .cta-button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 40px;
+    /* Dimensione dei pulsanti */
+    border-radius: 24px;
+    /* Arrotondamento dei bordi per un design moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Effetto ombra */
+    display: flex;
+    gap: 1rem;
+  }
+
+
+}
