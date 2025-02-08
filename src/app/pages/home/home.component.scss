@@ -58,7 +58,7 @@
         &.secondary {
           background-color: transparent;
           /* Colore scuro per il pulsante secondario */
-          color: mat-color($purple-palette, 500);
+          color: mat-color($purple-palette, 500) !important;
           transition: all 0.3s ease;
           cursor: pointer;
 
