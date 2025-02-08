@@ -5,6 +5,7 @@
   gap: 144px;
 
   h1 {
+    color: var(--very-light-gray);
     text-align: center;
     max-width: 45%;
     margin: 0 auto;
@@ -46,11 +47,12 @@
     font-size: 1rem;
     font-weight: 600;
     padding: 12px 40px;
-    /* Dimensione dei pulsanti */
-    border-radius: 24px;
     /* Arrotondamento dei bordi per un design moderno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* Effetto ombra */
+    border-radius: 100px;
+    background-color: white;
+    border: none;
     display: flex;
     gap: 1rem;
   }
