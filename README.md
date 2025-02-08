@@ -1,27 +1,53 @@
-# Portfolio
+# Front-End Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Welcome to my Front-End Portfolio! 🚀 Explore my projects, skills, and experiences as a Front-End Developer.
 
-## Development server
+## 🌐 Live Demo
+Check it out here: [fduraccio.github.io/fe-portfolio](https://fduraccio.github.io/fe-portfolio/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📌 About This Project
+This portfolio showcases my work in **Front-End Development**, highlighting my experience with modern web technologies, UI/UX design, and scalable architectures.
 
-## Code scaffolding
+### 🔥 Features
+- **Modern UI/UX** – Clean, responsive design built with the latest front-end technologies.
+- **Projects Showcase** – A selection of my best works, demonstrating real-world applications.
+- **Tech Stack** – Angular, TypeScript, SCSS, Webpack, and more.
+- **Performance Optimized** – Fast load times and smooth interactions.
+- **Mobile-Friendly** – Fully responsive design for all devices.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tech Stack
+- **Framework:** Angular
+- **Languages:** TypeScript, HTML, SCSS
+- **Build Tools:** Webpack, Angular CLI
+- **Design:** Adobe XD, Figma
 
-## Build
+## 🚀 Running Locally
+To run the portfolio locally, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/fduraccio/fe-portfolio.git
+   cd fe-portfolio
+   ```
 
-## Running unit tests
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
 
-## Running end-to-end tests
+4. Open in your browser: `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 📬 Contact
+If you’d like to collaborate or have any questions, feel free to reach out!
 
-## Further help
+- LinkedIn: [linkedin.com/in/federicaduraccio](https://www.linkedin.com/in/federicaduraccio)
+- Email: [fede.duraccio@gmail.com](mailto:fede.duraccio@gmail.com)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+Made with ❤️ by **fduraccio**
+
