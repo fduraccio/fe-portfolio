@@ -1,13 +1,22 @@
 @import '../../../styles.scss';
 
-.navbar {
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #131315;
-  // color: mat-color($color-palette, 100);
-  width: fit-content;
-  border-radius: 30px;
+  width: 100%;
+  border-radius: 100px;
+  color: var(--light-gray);
+  font-size: 26px;
+  font-weight: 400;
+  padding: 31px 70px;
+  margin-bottom: 28px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding-inline: 26px;
+  }
 
   a {
     text-decoration: none;
@@ -52,17 +61,14 @@
     display: flex;
     gap: 1rem;
 
-    mat-icon {
-      font-size: 24px;
-      color: white;
+  }
+}
 
-      &:hover {
-        color: #90caf9;
-      }
-    }
+.copywright {
+  margin-left: 70px;
+  font-size: 16px;
 
-    @media (max-width: 768px) {
-      display: none;
-    }
+  @media (max-width: 768px) {
+    margin-left: 26px;
   }
 }

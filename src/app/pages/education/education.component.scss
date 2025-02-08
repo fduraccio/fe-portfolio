@@ -1,0 +1,11 @@
+.education-container {
+  display: grid;
+  gap: 90px;
+  margin: 50px 0px;
+
+  @media (max-width: 768px) {
+    margin: 0px 34px;
+    gap: 32px;
+  }
+
+}

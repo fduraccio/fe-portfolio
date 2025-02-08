@@ -1,4 +1,3 @@
-
 /* styles.scss */
 * {
   margin: 0;
@@ -8,42 +7,61 @@
 
 .app-container {
   display: grid;
-  grid-template-columns: 180px auto 180px; /* 200px a sinistra, una colonna flessibile, 200px a destra */
-  gap: 20px; /* Distanza tra le righe */
-  min-height: 100vh; /* Assicurati che la griglia occupi almeno l'altezza dello schermo */
+  grid-template-columns: 180px auto 180px;
+  /* 200px a sinistra, una colonna flessibile, 200px a destra */
+  gap: 20px;
+  /* Distanza tra le righe */
+  min-height: 100vh;
+  /* Assicurati che la griglia occupi almeno l'altezza dello schermo */
 }
 
-header, footer {
-  grid-column: 1 / -1; /* Header e footer occupano tutta la larghezza della griglia */
+header {
+  grid-column: 1 / -1;
+  /* Header e footer occupano tutta la larghezza della griglia */
 }
 
 nav {
-  grid-column: 2; /* Il menu di navigazione occupa la colonna sinistra */
+  grid-column: 2;
+  /* Il menu di navigazione occupa la colonna sinistra */
 }
 
 main {
-  grid-column: 2; /* Il contenuto principale occupa la colonna centrale */
+  grid-column: 2;
+  /* Il contenuto principale occupa la colonna centrale */
   overflow: hidden;
 }
+
+footer {
+  grid-column: 2;
+  /* Il contenuto principale occupa la colonna centrale */
+  margin-bottom: 100px;
+}
+
 
 /* Modifica per schermi piccoli (mobile) */
 @media (max-width: 768px) {
   .app-container {
-    grid-template-columns: 34px 1fr 34px; /* 34px a sinistra e destra per mobile */
+    grid-template-columns: 34px 1fr 34px;
+    /* 34px a sinistra e destra per mobile */
   }
 
   nav {
-    grid-column: 1 / -1; /* Il menu di navigazione diventa a tutta larghezza su mobile */
+    grid-column: 1 / -1;
+    /* Il menu di navigazione diventa a tutta larghezza su mobile */
   }
 
   main {
-    grid-column: 1 / -1; /* Il contenuto principale occupa tutta la larghezza */
+    grid-column: 1 / -1;
+    /* Il contenuto principale occupa tutta la larghezza */
+  }
+
+  footer {
+    grid-column: 1 / -1;
+    margin-inline: 34px;
   }
 }
 
-nav{
+nav {
   display: flex;
   justify-content: center;
 }
-
-

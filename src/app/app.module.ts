@@ -15,6 +15,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatCardModule } from "@angular/material/card";
 import { SkillCardComponent } from "./components/skill-card/skill-card.component";
 import { JobExperienceCardComponent } from './components/job-experience-card/job-experience-card.component';
+import { EducationCardComponent } from './components/education-card/education-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { JobExperienceCardComponent } from './components/job-experience-card/job
     CarouselComponent,
     SkillCardComponent,
     JobExperienceCardComponent,
+    EducationCardComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
