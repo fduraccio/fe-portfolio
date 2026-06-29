@@ -1,12 +1,45 @@
 <section class="education-container">
-  <div *ngFor="let education of educations">
+  <div class="education-header">
+    <span class="eyebrow">Education</span>
+    <h1>
+      < Academic foundations shaped by <b> engineering, research, </b> and
+      continuous learning />
+    </h1>
+    <p class="intro">
+      My background combines software engineering fundamentals, AI-oriented
+      research, and a strong base in analytical and system-level thinking.
+    </p>
+  </div>
+
+  <div class="education-showcase">
     <education-card
-      [title]="education.title"
-      [description]="education.description"
-      [startDate]="education.startDate"
-      [endDate]="education.endDate"
-      [location]="education.location"
+      class="featured-degree"
+      [variant]="'featured'"
+      [title]="educations[0].title"
+      [institution]="educations[0].institution"
+      [grade]="educations[0].grade"
+      [focus]="educations[0].focus"
+      [milestoneLabel]="educations[0].milestoneLabel"
+      [startDate]="educations[0].startDate"
+      [endDate]="educations[0].endDate"
+      [location]="educations[0].location"
     >
     </education-card>
+
+    <div class="supporting-degree">
+      <span class="supporting-label">Earlier foundation</span>
+      <education-card
+        [variant]="'compact'"
+        [title]="educations[1].title"
+        [institution]="educations[1].institution"
+        [grade]="educations[1].grade"
+        [focus]="educations[1].focus"
+        [milestoneLabel]="educations[1].milestoneLabel"
+        [startDate]="educations[1].startDate"
+        [endDate]="educations[1].endDate"
+        [location]="educations[1].location"
+      >
+      </education-card>
+    </div>
   </div>
 </section>

@@ -1,18 +1,18 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "education-card",
   templateUrl: "./education-card.component.html",
   styleUrls: ["./education-card.component.scss"],
 })
-export class EducationCardComponent implements OnInit {
+export class EducationCardComponent {
+  @Input() variant: "featured" | "compact" = "featured";
   @Input() title: string = "";
+  @Input() milestoneLabel: string = "Academic Milestone";
   @Input() startDate: string = "Jan 2020";
   @Input() endDate: string = "Present";
-  @Input() description: string = "";
-  @Input() location: string ='test'
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  @Input() institution: string = "";
+  @Input() grade: string = "";
+  @Input() focus: string = "";
+  @Input() location: string = "";
 }
