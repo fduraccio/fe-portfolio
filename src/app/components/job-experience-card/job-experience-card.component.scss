@@ -1,88 +1,175 @@
 @import '../../../styles.scss';
 
 .experience-card {
-  display: flex;
-  flex-direction: row;
-  /* Default: layout orizzontale */
-  justify-content: space-between;
-  background: #121212;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.6fr);
+  gap: clamp(28px, 4vw, 44px);
+  background:
+    radial-gradient(circle at top right, rgba(120, 184, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(18, 18, 20, 0.92);
   color: #fff;
-  padding: 70px 80px;
-  border-radius: 40px;
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 32px;
   width: 100%;
-  // margin: 20px auto;
-  /* Centra la card */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  /* Aggiunge un'ombra */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--green), var(--purple-light));
+    opacity: 0.95;
+  }
+}
+
+.left-section,
+.right-section {
+  min-width: 0;
 }
 
 .left-section {
-  flex: 1;
-  /* Bilancia lo spazio */
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 8px;
 }
 
 .right-section {
-  flex: 2;
-  /* Bilancia lo spazio */
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.bullet{
-  color: var(--green);
+.meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.date-location{
-  font-size: 16px;
-  color: var(--light-gray);
-  font-weight: 300;
-}
-
-.title {
-  font-size: 28px;
-  font-weight: 400;
+.contract,
+.focus {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .contract {
-  color: var(--purple);
-  text-decoration: none;
-  font-size: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--purple-very-light);
+}
+
+.focus {
+  background: rgba(120, 184, 255, 0.1);
+  color: #ddecff;
+}
+
+.title {
+  font-size: clamp(1.7rem, 2vw, 2.15rem);
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.meta-block {
+  display: grid;
+  gap: 8px;
+}
+
+.bullet {
+  color: var(--green);
+}
+
+.date-location,
+.location {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(224, 230, 242, 0.76);
 }
 
 .company-name {
-  color: var(--purple);
-  font-size: 22px;
-  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.mobile-company {
+  display: none;
+}
+
+.description-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
 }
 
 .description {
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--light-gray)
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.99rem;
+  line-height: 1.72;
+  color: var(--very-light-gray);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--purple-light));
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.02);
+  }
 }
 
-/* MEDIA QUERY PER MOBILE */
 @media (max-width: 768px) {
   .experience-card {
-    flex-direction: column;
-    /* Cambia layout a colonna su schermi piccoli */
-    text-align: center;
-    /* Centra il contenuto */
-    padding: 30px;
-    text-align: left;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 22px 24px 26px;
+    border-radius: 28px;
+  }
 
-    .title {
-      font-size: 16px;
+  .left-section {
+    gap: 14px;
+    padding-left: 2px;
+  }
 
-    }
+  .title {
+    font-size: 1.35rem;
   }
 
   .company-name {
-    font-size: 22px
+    font-size: 1.02rem;
+  }
+
+  .right-section > .company-name {
+    display: none;
+  }
+
+  .mobile-company {
+    display: block;
   }
 
   .description {
-    font-size: 14px;
-
+    font-size: 0.94rem;
+    line-height: 1.65;
   }
 }

@@ -7,12 +7,9 @@
 
 .app-container {
   display: grid;
-  grid-template-columns: 180px auto 180px;
-  /* 200px a sinistra, una colonna flessibile, 200px a destra */
-  gap: 20px;
-  /* Distanza tra le righe */
+  grid-template-columns: clamp(16px, 4vw, 48px) minmax(0, 1fr) clamp(16px, 4vw, 48px);
+  gap: clamp(20px, 3vw, 32px);
   min-height: 100vh;
-  /* Assicurati che la griglia occupi almeno l'altezza dello schermo */
 }
 
 header {
@@ -22,46 +19,50 @@ header {
 
 nav {
   grid-column: 2;
-  /* Il menu di navigazione occupa la colonna sinistra */
+  width: min(100%, var(--page-max-width));
+  justify-self: center;
 }
 
 main {
   grid-column: 2;
-  /* Il contenuto principale occupa la colonna centrale */
-  overflow: hidden;
+  min-width: 0;
+  overflow: visible;
+  width: min(100%, var(--page-max-width));
+  justify-self: center;
 }
 
 footer {
   grid-column: 2;
-  /* Il contenuto principale occupa la colonna centrale */
-  margin-bottom: 100px;
+  min-width: 0;
+  width: min(100%, var(--page-max-width));
+  justify-self: center;
+  margin-bottom: 72px;
 }
 
 
 /* Modifica per schermi piccoli (mobile) */
 @media (max-width: 768px) {
   .app-container {
-    grid-template-columns: 34px 1fr 34px;
-    /* 34px a sinistra e destra per mobile */
+    grid-template-columns: 16px minmax(0, 1fr) 16px;
+    gap: 20px;
   }
 
   nav {
-    grid-column: 1 / -1;
-    /* Il menu di navigazione diventa a tutta larghezza su mobile */
+    grid-column: 2;
   }
 
   main {
-    grid-column: 1 / -1;
-    /* Il contenuto principale occupa tutta la larghezza */
+    grid-column: 2;
   }
 
   footer {
-    grid-column: 1 / -1;
-    margin-inline: 34px;
+    grid-column: 2;
+    margin-bottom: 48px;
   }
 }
 
 nav {
   display: flex;
   justify-content: center;
+  width: 100%;
 }

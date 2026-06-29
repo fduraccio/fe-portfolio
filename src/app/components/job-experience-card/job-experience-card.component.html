@@ -1,18 +1,26 @@
 <div class="experience-card">
   <div class="left-section">
+    <div class="meta-strip">
+      <span class="contract">{{ contractType }}</span>
+      <span class="focus">{{ focusArea }}</span>
+    </div>
     <h2 class="title">{{ jobTitle }}</h2>
-    <a href="#" class="contract">{{ contractType }}</a>
-    <p class="date-location">
-      {{ startDate }}
-      <span class="bullet">&bull;</span>
-        {{ endDate }}<br />{{ location }}
-    </p>
+    <h3 class="company-name mobile-company">{{ companyName }}</h3>
+    <div class="meta-block">
+      <p class="date-location">
+        {{ startDate }}
+        <span class="bullet">&bull;</span>
+        {{ endDate }}
+      </p>
+      <p class="location">{{ location }}</p>
+    </div>
   </div>
   <div class="right-section">
     <h3 class="company-name">{{ companyName }}</h3>
-    <p *ngFor="let description of descriptions" class="description">
-      {{ description }}
-    </p>
-    <!-- <p class="description">{{ description2 }}</p> -->
+    <ul class="description-list">
+      <li *ngFor="let description of descriptions" class="description">
+        {{ description }}
+      </li>
+    </ul>
   </div>
 </div>
