@@ -1,16 +1,43 @@
 .skill-card {
-  background-color: transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(14, 14, 16, 0.95);
   color: white;
-  padding: 34px 26px 0px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 28px 24px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: min(340px, 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  flex: 0 0 min(340px, 100%);
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 38%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+    opacity: 0.58;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22);
+  }
 
   h3 {
-    font-size: 16px;
-    font-weight: normal;
-    margin-bottom: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--purple-very-light);
+    margin-bottom: 20px;
   }
 
   ul {
@@ -20,16 +47,57 @@
     li {
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      min-height: 52px;
+      transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        transform: translateX(3px);
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+
+      .skill-visual {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       .icon {
         width: 24px;
         height: 24px;
-        margin-right: 12px;
+        object-fit: contain;
+        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.14));
       }
 
-      span {
-        font-size: 16px;
+      .icon-fallback {
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(120, 184, 255, 0.22), rgba(205, 181, 255, 0.24));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      .skill-label {
+        font-size: 0.98rem;
+        line-height: 1.35;
+        color: var(--very-light-gray);
       }
     }
   }

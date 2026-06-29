@@ -1,7 +1,13 @@
 <section class="experience-container">
-  <h1>
-    < Here, you can know me a little more and see my whole experience as a
-    <b> Front-End Software Engineer </b> />
+  <div class="experience-header">
+    <span class="eyebrow">Career timeline</span>
+    <h1>
+      < From <b> Front-End Engineer </b> to <b> AI Solution Lead </b> />
+    </h1>
+    <p class="intro">
+      A path shaped by enterprise banking, digital lending, AI-powered
+      platforms, and team leadership across modern front-end ecosystems.
+    </p>
 
     <div class="cta-container">
       <button
@@ -13,12 +19,19 @@
         Download CV
       </button>
     </div>
-  </h1>
+  </div>
 
-  <section>
-    <div *ngFor="let experience of experiences">
+  <section class="experience-list">
+    <div
+      *ngFor="let experience of experiences; let i = index"
+      #experienceEntry
+      class="experience-entry"
+      [class.is-visible]="revealedEntries[i]"
+      [style.transitionDelay.ms]="i * 70"
+    >
       <job-experience-card
         [jobTitle]="experience.jobTitle"
+        [focusArea]="experience.focusArea"
         [contractType]="experience.contractType"
         [startDate]="experience.startDate"
         [endDate]="experience.endDate"

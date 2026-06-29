@@ -1,17 +1,15 @@
 <section class="home-container">
   <section class="hero row">
     <div class="content col-sm-6">
-      <div class="profile-photo d-sm-none">
-        <img src="./assets/img/photo.jpg" alt="Federica" />
-      </div>
-
+      <span class="eyebrow">AI Solution Lead • Front-End Architect • Fintech</span>
       <h1>Hi, I'm Federica</h1>
       <p>
-        During these <b>4 years</b> of experience in fintech as
-        <b>Front-End Software Engineer</b> I specialized in creating user-focused
-        applications and thrived in cross-team collaboration to define and
-        develop impactful features. I'm passionate about growth, innovation, and
-        delivering high-quality solutions.
+        Over the last <b>5+ years</b> I’ve worked across fintech, enterprise
+        banking, and AI-driven products, evolving from
+        <b>Front-End Engineer</b> to <b>AI Solution Lead</b>. I build scalable
+        digital experiences, coordinate cross-functional delivery, and bring
+        together product thinking, modern Angular architectures, and
+        conversational AI solutions.
       </p>
 
       <div class="cta-container">
@@ -23,10 +21,25 @@
           See experiences
         </a>
       </div>
+
+      <div class="quick-facts">
+        <div class="fact-pill">
+          <strong>5+</strong>
+          <span>years across banking and AI products</span>
+        </div>
+        <div class="fact-pill">
+          <strong>Angular 7-19</strong>
+          <span>experience across multiple enterprise versions</span>
+        </div>
+        <div class="fact-pill">
+          <strong>OpenAI + Cloud</strong>
+          <span>AI integrations on AWS and Azure</span>
+        </div>
+      </div>
     </div>
 
-    <div class="profile-photo col-sm-4 d-none d-sm-block">
-      <img src="./assets/img/photo.jpg" alt="Federica" />
+    <div class="profile-photo col-sm-4">
+      <img src="assets/img/photo.jpg" alt="Federica" />
     </div>
   </section>
 
@@ -34,8 +47,17 @@
     <carousel></carousel>
   </section>
 
-  <section class="languages-section">
-    <div *ngFor="let language of languages" class="row languages">
+  <section
+    #languagesSection
+    class="languages-section"
+  >
+    <div
+      *ngFor="let language of languages; let i = index"
+      class="row languages"
+      [style.opacity]="languageStyles[i].opacity"
+      [style.transform]="languageStyles[i].transform"
+      [style.filter]="languageStyles[i].filter"
+    >
       <span [ngStyle]="{ color: language.color }">
         {{ language.label }}
       </span>
@@ -43,18 +65,35 @@
   </section>
 
   <section class="technologies-section">
-    <span> These are the <br> technologies I’ve been using </span>
-    <section class="skill-cards-section">
-      <skill-card *ngFor="let skillSet of skillSets"
-        [title]="skillSet.title"
-        [items]="skillSet.skills"
-      ></skill-card>
+    <span> What I build with <br> today </span>
+    <section class="floating-skills-stage">
+      <article
+        *ngFor="let skillSet of skillSets; let i = index"
+        class="skill-cloud-group"
+        [style.animationDelay.ms]="i * 140"
+      >
+        <div class="cloud-heading">
+          <span class="cloud-kicker">Current focus</span>
+          <h3>{{ skillSet.title }}</h3>
+        </div>
 
-      <!-- <skill-card
-        [title]="'Front-end Engineer Design'"
-        [items]="skills"
-      ></skill-card> -->
-      <!--  -->
+        <div class="floating-pill-cluster">
+          <span
+            *ngFor="let skill of skillSet.skills; let j = index"
+            class="floating-pill"
+            [class.has-icon]="skill.icon"
+            [style.animationDelay.ms]="(i * 180) + (j * 90)"
+          >
+            <span class="pill-icon" *ngIf="skill.icon; else pillFallback" aria-hidden="true">
+              <img [src]="skill.icon" [alt]="skill.label" />
+            </span>
+            <ng-template #pillFallback>
+              <span class="pill-dot" aria-hidden="true"></span>
+            </ng-template>
+            <span class="pill-label">{{ skill.label }}</span>
+          </span>
+        </div>
+      </article>
     </section>
   </section>
 </section>

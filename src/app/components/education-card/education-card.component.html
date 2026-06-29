@@ -1,11 +1,19 @@
-<div class="education-card">
+<div class="education-card" [class.compact]="variant === 'compact'">
+  <div class="card-header">
+    <span class="eyebrow">{{ milestoneLabel }}</span>
+    <span class="grade-badge">Grade {{ grade }}</span>
+  </div>
   <div class="left-section">
     <h2 class="title">{{ title }}</h2>
-    <a href="#" class="description">{{ description }}</a>
-    <p class="date-location">
-      {{ startDate }}
-      <span class="bullet">&bull;</span>
-      {{ endDate }}<br />{{ location }}
-    </p>
+    <p class="institution">{{ institution }}</p>
+    <p class="focus">{{ focus }}</p>
+    <div class="meta-block">
+      <p class="date-location">
+        {{ startDate }}
+        <span class="bullet">&bull;</span>
+        {{ endDate }}
+      </p>
+      <p class="location">{{ location }}</p>
+    </div>
   </div>
 </div>
